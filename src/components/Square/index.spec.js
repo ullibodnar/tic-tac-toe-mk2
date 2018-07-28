@@ -31,4 +31,10 @@ describe('components:Square', () => {
       toJson(shallow(<Square player='x' index={8} />).dive())
     ).toMatchSnapshot()
   })
+
+  it('renders the Square with the proper cursor if a click handler is provided', () => {
+    expect(
+      toJson(shallow(<Square handleClick={() => null} index={0} />).dive())
+    ).toMatchSnapshot()
+  })
 })
